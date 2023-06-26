@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Tab widget to select the tab -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <!-- FrameLayout which contains the data of the activity -->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- 메인 탭 -->
+                <LinearLayout
+                    android:id="@+id/mainTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#C3A2FD"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="Top20"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/button1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="10dp"
+                            android:text="평점 개수로 정렬"
+                            android:textSize="15dp" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="평점 평균으로 정렬"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/listView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#FFFFFF"
+                        android:dividerHeight="1dp"
+                        android:footerDividersEnabled="false"></ListView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="액션 Top20"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:id="@+id/listView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#FFFFFF"
+                        android:dividerHeight="1dp"
+                        android:footerDividersEnabled="false"></ListView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="스릴러 Top20"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:id="@+id/listView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:dividerHeight="1dp"
+                        android:background="#FFFFFF"
+                        android:footerDividersEnabled="false"></ListView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="로맨스 Top20"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:id="@+id/listView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#FFFFFF"
+                        android:dividerHeight="1dp"
+                        android:footerDividersEnabled="false"></ListView>
+                </LinearLayout>
+                <!-- 검색 탭 -->
+                <LinearLayout
+                    android:id="@+id/searchTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:id="@+id/searchText"
+                        android:completionThreshold="5"
+                        android:hint="작품 검색"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="검색"
+                        android:textSize="20dp"
+                        android:id="@+id/searchBtn"/>
+                    <ListView
+                        android:id="@+id/searchLists"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:dividerHeight="1dp"
+                        android:footerDividersEnabled="false"></ListView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:id="@+id/no_result"/>
+                </LinearLayout>
+                <!--상세 탭-->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/detailTab">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFF9C2"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="210dp"
+                                android:layout_height="300dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/poster_sample" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="#FFFFFF">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#000"
+                                    android:textSize="35sp"
+                                    android:text="제목"
+                                    android:paddingLeft="10dp"
+                                    android:id="@+id/title1"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tagline1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                android:paddingLeft="10dp"
+                                android:text="한줄설명"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/genre1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                android:paddingLeft="10dp"
+                                android:text="장르"
+                                android:textSize="15sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:background="#FFFFFF"
+                                android:textSize="15sp"
+                                android:text="배우"
+                                android:id="@+id/actor"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="#FFFFFF">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="10dp"
+                                    android:text="평점"
+                                    android:textSize="15sp"
+                                    android:id="@+id/rating"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="10dp"
+                                    android:text="개봉일"
+                                    android:textSize="15sp"
+                                    android:id="@+id/date"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="10dp"
+                                    android:text="상영시간"
+                                    android:textSize="15sp"
+                                    android:id="@+id/runtime"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="  |  all age"
+                                    android:textSize="15sp"
+                                    android:id="@+id/adult" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/overview1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:text="줄거리"
+                                android:textColor="#000"
+                                android:textSize="18dp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                android:text="Reviews"
+                                android:textColor="#000"
+                                android:paddingTop="10dp"
+                                android:textSize="25dp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RatingBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:numStars="5"
+                                    android:rating="3"
+                                    android:stepSize="0.5"
+                                    android:id="@+id/ratingBar"/>
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="리뷰 남기기"
+                                    android:layout_marginLeft="20dp"
+                                    android:id="@+id/reviewBtn"/>
+                            </LinearLayout>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="25dp"
+                                android:id="@+id/reviewEdt"
+                                android:completionThreshold="5"
+                                android:hint="write the review"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>
